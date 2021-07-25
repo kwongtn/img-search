@@ -21,6 +21,21 @@ class qImage(BaseModel):
     img: str
 
 
+
+# Add image features to index
+@app.post("/add")
+def addImg(addObj: AddImageClass):
+    feResult = fe.extract(base64toImage(addObj.img))
+
+    res = {}
+
+    res["result"] = feResult.tolist()
+    res["id"] = addObj.id
+    res["attribs"] = addObj.attribs
+
+    return res
+
+
 # Proof of concept work that receives a base64 image
 # and returns the extracted feature vector.
 @app.post("/extract")
