@@ -1,4 +1,4 @@
-FROM  python:3.9-alpine
+FROM  python:3.9-slim
 
 ENV LC_ALL en_US.utf8
 ENV LANG en_US.utf8
@@ -9,7 +9,7 @@ RUN pip3 install --upgrade setuptools
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install tensorflow fastapi uvicorn nest_asyncio pydantic pillow
 
 # copy our code to the image
 COPY ./src /app
