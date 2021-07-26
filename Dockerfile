@@ -9,7 +9,7 @@ RUN pip3 install --upgrade setuptools
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install tensorflow fastapi uvicorn nest_asyncio pydantic pillow
+RUN pip install tensorflow fastapi uvicorn nest_asyncio pydantic pillow dotenv
 
 # copy our code to the image
 COPY ./src /app
