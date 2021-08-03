@@ -1,7 +1,7 @@
 import env_loader
 
 from typing import Any
-from feature_extractor import FeatureExtractor
+from extractors.resnet50 import ResNet50Extractor
 import uvicorn
 from fastapi import FastAPI, HTTPException
 import nest_asyncio
@@ -16,7 +16,7 @@ app = FastAPI(debug=True)
 nest_asyncio.apply()
 
 # Load the feature extractor before anything
-fe = FeatureExtractor()
+feResNet50 = ResNet50Extractor()
 
 # ===================================================
 
@@ -33,11 +33,14 @@ class AddImageClass(BaseModel):
 
 # Receives a base64 image
 # and returns the extracted feature vector.
-@app.post("/extract")
-def extractFeature(qImage: qImage):
+@app.post("/extract/{strategy}")
+def extractFeature(qImage: qImage, strategy: str):
     q = qImage.img
-    res = fe.extract(base64toImage(q))
-    return res.tolist()
+
+    if strategy == "resnet50":
+        return feResNet50.extract(base64toImage(q)).tolist()
+    else:
+        raise HTTPException(status_code=404, detail="Unknown strategy")
 
 
 class qTwoImg(BaseModel):
@@ -47,10 +50,14 @@ class qTwoImg(BaseModel):
 # Compare between both images via extracted features
 
 
-@app.post("/compare")
-def compare(qTwoImg: qTwoImg):
-    q1 = fe.extract(base64toImage(qTwoImg.img1))
-    q2 = fe.extract(base64toImage(qTwoImg.img2))
+@app.post("/compare/{strategy}")
+def compare(qTwoImg: qTwoImg, strategy: str):
+
+    if strategy == "resnet50":
+        q1 = feResNet50.extract(base64toImage(qTwoImg.img1))
+        q2 = feResNet50.extract(base64toImage(qTwoImg.img2))
+    else:
+        raise HTTPException(status_code=404, detail="Unknown strategy")
 
     # Get eucledian distance between the two vectors
     dists = np.linalg.norm(q1 - q2)
