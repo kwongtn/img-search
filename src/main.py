@@ -2,6 +2,8 @@ import env_loader
 
 from typing import Any
 from extractors.resnet50 import ResNet50Extractor
+from extractors.resnet50v2 import ResNet50V2Extractor
+from extractors.resnet101 import ResNet101Extractor
 import uvicorn
 from fastapi import FastAPI, HTTPException
 import nest_asyncio
@@ -17,6 +19,8 @@ nest_asyncio.apply()
 
 # Load the feature extractor before anything
 feResNet50 = ResNet50Extractor()
+feResNet50V2 = ResNet50V2Extractor()
+feResNet101 = ResNet101Extractor()
 
 # ===================================================
 
@@ -39,6 +43,10 @@ def extractFeature(qImage: qImage, strategy: str):
 
     if strategy == "resnet50":
         return feResNet50.extract(base64toImage(q)).tolist()
+    elif strategy == "resnet50v2":
+        return feResNet50V2.extract(base64toImage(q)).tolist()
+    elif strategy == "resnet101":
+        return feResNet101.extract(base64toImage(q)).tolist()
     else:
         raise HTTPException(status_code=404, detail="Unknown strategy")
 
@@ -56,6 +64,12 @@ def compare(qTwoImg: qTwoImg, strategy: str):
     if strategy == "resnet50":
         q1 = feResNet50.extract(base64toImage(qTwoImg.img1))
         q2 = feResNet50.extract(base64toImage(qTwoImg.img2))
+    elif strategy == "resnet50v2":
+        q1 = feResNet50V2.extract(base64toImage(qTwoImg.img1))
+        q2 = feResNet50V2.extract(base64toImage(qTwoImg.img2))
+    elif strategy == "resnet101":
+        q1 = feResNet101.extract(base64toImage(qTwoImg.img1))
+        q2 = feResNet101.extract(base64toImage(qTwoImg.img2))
     else:
         raise HTTPException(status_code=404, detail="Unknown strategy")
 
@@ -64,6 +78,7 @@ def compare(qTwoImg: qTwoImg, strategy: str):
 
     res = {}
     res["distance"] = dists.item()
+    res["similarity"] = 1 / dists.item()
 
     return res
 
