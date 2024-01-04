@@ -1,7 +1,8 @@
 repo_name: kwongtn/img-search
 report_id: 981283ad882ca36c9da1f8da0b97bcd6
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T16:21:50+00:00'
+timestamp: '2024-01-04T15:05:27+00:00'
 requested_by: kwongtn
 provider: github
 branch: main
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/kwongtn/img-search
   detection_source: Repo Metadata
 - name: FastAPI
   description: A high performance, easy to learn, fast to code, ready for production
@@ -27,6 +29,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Microframeworks (Backend)
   image_url: https://img.stackshare.io/service/25014/default_f6ff39141b468e832d1bc59fc98a060df604d44d.png
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
@@ -39,7 +42,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Serialization Frameworks
   image_url: https://img.stackshare.io/service/4393/ma2jqJKH_400x400.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
@@ -52,6 +55,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Virtual Machine Platforms & Containers
   image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/kwongtn/img-search
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -61,6 +65,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/kwongtn/img-search
   detection_source: Repo Metadata
 - name: PyPI
   description: A repository of software for the Python programming language
@@ -70,6 +75,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
@@ -83,7 +89,7 @@ tools:
   category: Application Hosting
   sub_category: Web Servers
   image_url: https://img.stackshare.io/service/12834/uvicorn.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
@@ -95,6 +101,7 @@ tools:
   category: Assets and Media
   sub_category: Image Processing and Management
   image_url: https://img.stackshare.io/service/2375/default_1f67b0ca7416a9f52beb655f90b5602d5ef74b75.jpg
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
@@ -108,7 +115,7 @@ tools:
   category: Libraries
   sub_category: Data Science Tools
   image_url: https://img.stackshare.io/service/2179/default_332f874a2edb2686f578aa6389313efcea1eec41.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
@@ -121,6 +128,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/kwongtn/img-search
   detection_source: Repo Metadata
 - name: TensorFlow
   description: Open Source Software Library for Machine Intelligence
@@ -132,13 +140,13 @@ tools:
   category: Application Utilities
   sub_category: Machine Learning Tools
   image_url: https://img.stackshare.io/service/4717/FtFnqC38_400x400.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
 - name: pydantic
   description: Data validation and settings management using python 3.6 type hinting
-  package_url: https://pypi.org/pydantic
+  package_url: https://pypi.org/project/pydantic
   version: 1.8.2
   license: MIT
   open_source: true
@@ -146,13 +154,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20022/default_b0d1a54f127d7017fce41c15f5e85568fb7019ed.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
 - name: python-dotenv
   description: Add .env support to your django/flask apps in development and deployments
-  package_url: https://pypi.org/python-dotenv
+  package_url: https://pypi.org/project/python-dotenv
   version: 0.19.0
   license: BSD-3-Clause
   open_source: true
@@ -160,13 +168,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20095/default_3141eabecdd8efa55de73a33c43f2ac0d5bbf954.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
 - name: wrapt
   description: Module for decorators, wrappers and monkey patching
-  package_url: https://pypi.org/wrapt
+  package_url: https://pypi.org/project/wrapt
   version: 1.12.1
   license: BSD-2-Clause
   open_source: true
@@ -174,7 +182,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19946/default_0b0a94e1bdf3e64deeccb23892ca2335bdc30e4f.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/kwongtn/img-search/blob/main/requirements.txt
   detection_source: requirements.txt
   last_updated_by: KwongTN
   last_updated_on: 2021-07-26 12:32:23.000000000 Z
